@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import *
 import math, time
-import metodos;
+import metodos
 class PlanoCartesiano:
 
     """Docstring for planoCartesiano. """
@@ -69,9 +69,8 @@ class PlanoCartesiano:
     def graph(self, fx:str):
         points = metodos.fxpoints(fx, math.floor((-1)*self.size/2), math.floor(self.size/2))
 
-        for i in range(0, len(points)):
-            print(i, " => ", points[i])
-            self.canva.create_oval(points[i]*self.size/2,i,points[i]*self.size/2,i, fill="red")
+        for i in range(0, len(points)-1):
+            #print(i, " => ", points[i])
+            self.canva.create_oval(points[i]*self.size/2,i+250,points[i]*self.size/2+250,i+250, fill="red")
             #time.sleep(0.1)
-
 
