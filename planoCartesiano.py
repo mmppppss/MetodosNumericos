@@ -14,9 +14,13 @@ class PlanoCartesiano:
         self.LENGTH = LENGTH
         self.title = title
         self.size = HEIGHT
-        self.createTable(metodos.biseccion(1,2,"x**5+4*x**2-10",0.01))
-        self.window.mainloop()
+        #self.window.geometry(str(WIDTH)+"x"+str(HEIGHT))
+        #self.createTable(metodos.biseccion(4,4.5,"tan(x)-x",0.01))
+        #self.createTable(metodos.falsaPosicion(1,2,"ln(x)+x^2-4",0.001))
+        #self.createTable(metodos.newtonRaphson(0,"e^(x)-3*x^2","e^(x)-6*x",0.001))
+        self.createTable(metodos.secante(0,1,"e^(-x)-x",0.001))
         #self.interface(WIDTH, HEIGHT, LENGTH, title)
+        self.window.mainloop()
     def interface(self, WIDTH:int, HEIGHT:int, LENGTH:int, title:str):
         """
         Dibuja la interfaz
@@ -30,7 +34,6 @@ class PlanoCartesiano:
         scala = math.floor(HEIGHT/LENGTH)
         zero=HEIGHT/2
         size=HEIGHT
-        self.window.geometry(str(WIDTH)+"x"+str(HEIGHT))
         self.canva = tk.Canvas(self.window, width=size, height=size, bg="white")
         self.canva.pack(side=tk.LEFT)
         ##draw lines
@@ -88,8 +91,8 @@ class PlanoCartesiano:
         for i in range(rows):
             for j in range(cols):
                  
-                self.e = Entry(self.window, width=20, fg='blue',
-                               font=('Arial',16,'bold'))
+                self.e = Entry(self.window, width=10, fg='blue', justify='center',
+                               font=('Arial',11,'bold'))
                  
                 self.e.grid(row=i, column=j)
                 self.e.insert(END, list[i][j]) 
