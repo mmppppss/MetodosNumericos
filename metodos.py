@@ -100,6 +100,7 @@ def secante(xi:float, xi1:float, fx:str, es:float):
         xi=xiseg
         i+=1
     return list
+
 def fxpoints(fx:str, inicioX:int, finX:int):
     """
     Calcula los valores de una funcion y retorna una lista con los valores en y
