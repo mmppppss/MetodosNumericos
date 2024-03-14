@@ -3,7 +3,6 @@ import tkinter as tk
 from tkinter import *
 import math, time
 
-from sympy.plotting.plot import flat
 import metodos
 class GUI:
 
@@ -24,6 +23,7 @@ class GUI:
 
     def main(self):
         input = Entry(self.calcPanel, font=("Arial", 20))
+        input.insert(END,"sin(x)")
         input.pack(side = TOP)
         self.calcPanel.add(input)
         intervalPanel = PanedWindow(self.calcPanel,orient="horizontal") 

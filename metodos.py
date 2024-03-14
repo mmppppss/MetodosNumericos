@@ -1,5 +1,4 @@
 import math
-import sympy
 
 def biseccion(xl:float, xu:float, fx:str, es:float):
     """
